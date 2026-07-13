@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../Assignment_3"
+		},
+		{
+			"path": "../Variables_and_Operators_Assignment"
+		},
+		{
+			"path": "../If Else Questions Assignment"
+		},
+		{
+			"path": "../If & Else Operators Assignment"
+		},
+		{
+			"path": "../Class 8"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../my personal"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Variables_and_Operators_Assignment"
+	}
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown</title>
+</head>
+<style>
+    body{
+        text-align:center;
+        font-family:Arial;
+        margin-top:40px;
+    }
+</style>
+<body>
+<h2>Countdown</h2>
+
+<input id="number" />
+<button id="btn">Start Countdown</button>
+<div id="output"></div>
+</body>
+
+<script>
+
+let number = document.querySelector("#number");
+let btn = document.querySelector("#btn");
+let output = document.querySelector("#output");
+
+btn.addEventListener("click", function(){
+
+    let result="";
+
+    for(let i=number.value; i>=1; i--){
+
+        result += i + "<br>";
+
+    }
+
+    output.innerHTML=result;
+
+});
+
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+</head>
+<style>
+    * {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+        margin-top: 20px;
+    }
+
+    #addBtn {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: 2px solid #4CAF50;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    #itemInput {
+        padding: 10px 20px;
+        width: 200px;
+        font-size: 15px;
+    }
+</style>
+
+<body>
+    <h2>Shopping List</h2>
+    <input type="text" id="itemInput" placeholder="Enter new item">
+    <button onclick="addItem()" id="addBtn">Add Item</button>
+    <div id="shoppingList"></div>
+
+    <h3 id="totalItems"></h3>
+</body>
+<script>
+    // Shopping items array
+    let shoppingItems = ["Milk", "Bread", "Eggs", "Rice", "Sugar"];
+
+    // Function to display shopping list
+    function displayList() {
+
+        let list = "";
+
+        for (let i = 0; i < shoppingItems.length; i++) {
+            list += (i + 1) + ". " + shoppingItems[i] + "<br>";
+        }
+
+        document.getElementById("shoppingList").innerHTML = list;
+
+        document.getElementById("totalItems").innerHTML =
+            "Total Items: " + shoppingItems.length;
+    }
+
+    // Function to add new item
+    function addItem() {
+
+        let newItem = document.getElementById("itemInput").value;
+
+        if (newItem !== "") {
+
+            shoppingItems.push(newItem);
+
+            displayList();
+
+            document.getElementById("itemInput").value = "";
+        }
+    }
+
+    // Show list when page loads
+    displayList();
+</script>
+
+</html>

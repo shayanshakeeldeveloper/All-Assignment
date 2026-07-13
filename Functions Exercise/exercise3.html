@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Light Bulb Status</title>
+</head>
+<body>
+    <h1 id="status">Bulb is Off</h1>
+    <button id="on">Turn ON</button>
+    <button id="off">Turn OFF</button>
+</body>
+
+    <script>
+        let statusH1 = document.querySelector("#status")
+        let onBtn = document.querySelector("#on")
+        let offBtn = document.querySelector("#off")
+        console.log(statusH1)
+        console.log(onBtn)
+        console.log(offBtn)
+
+        function turnOn() {
+            statusH1.innerHTML = "Bulb is On"
+        }
+
+        function turnOff() {
+            statusH1.innerHTML = "Bulb is Off"
+        }
+
+        onBtn.addEventListener("click", turnOn)
+        offBtn.addEventListener("click", turnOff)
+    </script>
+
+</html>

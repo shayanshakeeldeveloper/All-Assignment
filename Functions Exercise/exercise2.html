@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Age Counter</title>
+</head>
+<body>
+    <h1 id="age">18</h1>
+    <button id="birthday">Birthday</button>
+    <button id="back">Go Back One Year</button>
+</body>
+<script>
+    let ageH1 = document.querySelector("#age")
+    let birthdayBtn = document.querySelector("#birthday")
+    let backBtn = document.querySelector("#back")
+    console.log(ageH1)
+    console.log(birthdayBtn)
+    console.log(backBtn)
+    let age = ageH1.innerHTML
+
+    function increment() {
+        age++
+        ageH1.innerHTML = age
+    }
+
+    function decrement() {
+        age--
+        ageH1.innerHTML = age
+    }
+
+    birthdayBtn.addEventListener("click", increment)
+    backBtn.addEventListener("click", decrement)
+</script>
+</html>

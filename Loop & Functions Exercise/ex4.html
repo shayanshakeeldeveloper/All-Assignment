@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Numbers</title>
+</head>
+<style>
+    body{
+        text-align:center;
+        font-family:Arial;
+        margin-top:40px;
+    }
+</style>
+<body>
+<h2>Sum of Numbers</h2>
+
+<input id="number" />
+
+<button id="btn">Calculate Sum</button>
+
+<h3 id="output"></h3>
+
+</body>
+<script>
+
+let number = document.querySelector("#number");
+let btn = document.querySelector("#btn");
+let output = document.querySelector("#output");
+
+btn.addEventListener("click", function(){
+
+    let sum=0;
+
+    for(let i=1; i<=number.value; i++){
+
+        sum += i;
+
+    }
+
+    output.innerText="Sum = " + sum;
+
+});
+
+</script>
+</html>

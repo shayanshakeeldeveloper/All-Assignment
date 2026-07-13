@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remaining Time Calculator</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 350px;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    .result {
+        margin-top: 20px;
+    }
+
+    .result p {
+        font-size: 20px;
+        margin: 10px 0;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Event Countdown</h1>
+
+        <input type="datetime-local" id="eventDate">
+
+        <button onclick="showRemainingTime()">Remaining Time</button>
+
+        <div class="result">
+            <p>Remaining Days: <span id="days">0</span></p>
+            <p>Remaining Hours: <span id="hours">0</span></p>
+            <p>Remaining Minutes: <span id="minutes">0</span></p>
+            <p>Remaining Seconds: <span id="seconds">0</span></p>
+        </div>
+    </div>
+</body>
+<script>
+    let timer;
+
+    function showRemainingTime() {
+
+        let eventDate = document.getElementById("eventDate").value;
+
+        if (eventDate === "") {
+            alert("Please select an event date and time.");
+            return;
+        }
+
+        clearInterval(timer);
+
+        timer = setInterval(function () {
+
+            const now = new Date().getTime();
+            const eventTime = new Date(eventDate).getTime();
+
+            const difference = eventTime - now;
+
+            if (difference <= 0) {
+
+                clearInterval(timer);
+
+                document.getElementById("days").innerHTML = 0;
+                document.getElementById("hours").innerHTML = 0;
+                document.getElementById("minutes").innerHTML = 0;
+                document.getElementById("seconds").innerHTML = 0;
+
+                alert("Event Time Reached!");
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+        }, 1000);
+
+    }
+</script>
+
+</html>

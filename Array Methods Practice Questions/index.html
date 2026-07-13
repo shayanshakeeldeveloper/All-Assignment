@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array Questions</title>
+</head>
+<body>
+    <h1>JavaScript Arrays Assignment</h1>
+    <div id="output"></div>
+</body>
+<script>
+
+    let output = document.getElementById("output");
+
+    // ================= Question 1 =================
+    output.innerHTML += "<h2>Question 1</h2>";
+
+    let cities = ["Karachi", "Lahore", "Islamabad", "Peshawar", "Quetta"];
+    cities.push("Multan", "Hyderabad");
+
+    for(let city of cities){    
+        output.innerHTML += city + "<br>";
+    }
+
+    // ================= Question 2 =================
+    output.innerHTML += "<h2>Question 2</h2>";
+
+    let foods = ["Pizza", "Burger", "Biryani", "Pasta", "Fries", "Sandwich"];
+    foods.pop();
+
+    for(let food of foods){ 
+        output.innerHTML += food + "<br>";
+    }
+
+    // ================= Question 3 =================
+    output.innerHTML += "<h2>Question 3</h2>";
+
+    let colors = ["Red", "Blue", "Green", "Yellow", "Black"];
+    colors.shift();
+
+    for(let i=0; i<colors.length; i++){ 
+        output.innerHTML += colors[i] + "<br>";
+    }
+
+    // ================= Question 4 =================
+    output.innerHTML += "<h2>Question 4</h2>";
+
+    let languages = ["JavaScript", "Python", "Java", "C++", "PHP"];
+    languages.unshift("HTML", "CSS");
+
+    for(let lang of languages){ 
+        output.innerHTML += lang + "<br>";
+    }
+
+    // ================= Question 5 =================
+    output.innerHTML += "<h2>Question 5</h2>";
+
+    let fruits = ["Apple","Banana","Orange","Mango","Grapes","Peach","Kiwi","Cherry"];
+
+    let copiedFruits = fruits.slice(2,6);
+
+    output.innerHTML += "<b>Original Array:</b><br>";
+
+    for(let fruit of fruits){   
+        output.innerHTML += fruit + "<br>";
+    }
+
+    output.innerHTML += "<br><b>Copied Array:</b><br>";
+
+    for(let fruit of copiedFruits){ 
+        output.innerHTML += fruit + "<br>";
+    }
+
+    // ================= Question 6 =================
+    output.innerHTML += "<h2>Question 6</h2>";
+
+    let animals = ["Dog","Cat","Cow","Horse","Goat","Sheep","Elephant"];
+
+    animals.splice(2,0,"Lion","Tiger");
+
+    for(let animal of animals){ 
+        output.innerHTML += animal + "<br>";
+    }
+
+    // ================= Question 7 =================
+    output.innerHTML += "<h2>Question 7</h2>";
+
+    let cars = ["Toyota","Honda","BMW","Audi","Suzuki","Kia"];
+
+    cars.splice(2,2);
+
+    for(let car of cars){
+        output.innerHTML += car + "<br>";
+    }
+
+    // ================= Question 8 =================
+    output.innerHTML += "<h2>Question 8</h2>";
+
+    let subjects = ["Math","English","Physics","Chemistry","Biology","Urdu"];
+
+    subjects.splice(1,1,"Computer Science");
+
+    for(let subject of subjects){
+        output.innerHTML += subject + "<br>";
+    }
+
+    // ================= Question 9 =================
+    output.innerHTML += "<h2>Question 9</h2>";
+
+    let students = [
+        "Ali",
+        "Hamza",
+        "Usman",
+        "Bilal",
+        "Zain",
+        "Saad",
+        "Huzaifa",
+        "Talha",
+        "Ayan",
+        "Hasan"
+    ];
+
+    students.push("Asad","Farhan");
+
+    students.shift();
+
+    students.unshift("Ahmed");
+
+    students.pop();
+
+    for(let i=0; i<students.length; i++){
+        output.innerHTML += students[i] + "<br>";
+    }
+
+    // ================= Question 10 =================
+    output.innerHTML += "<h2>Question 10</h2>";
+
+    let mobiles = [
+    "Samsung",
+    "Oppo",
+    "Vivo",
+    "Realme",
+    "Infinix",
+    "Xiaomi",
+    "Google",
+    "Motorola"
+    ];
+
+    mobiles.push("OnePlus");
+
+    mobiles.shift();
+
+    mobiles.unshift("Apple");
+
+    let lastFour = mobiles.slice(-4);
+
+    mobiles.splice(3,0,"Nothing");
+
+    output.innerHTML += "<b>Updated Mobile Array:</b><br>";
+
+    for(let i=0;i<mobiles.length;i++){
+        output.innerHTML += mobiles[i] + "<br>";
+    }
+
+    output.innerHTML += "<br><b>Last 4 Brands:</b><br>";
+
+    for(let i=0;i<lastFour.length;i++){
+        output.innerHTML += lastFour[i] + "<br>";
+    }
+
+    // ================= Bonus Challenge =================
+    output.innerHTML += "<h2>Bonus Challenge</h2>";
+
+    let numbers = [10,20,30,40,50,60,70,80,90,100];
+
+    numbers.push(100,200);
+
+    numbers.shift();
+
+    numbers.unshift(0);
+
+    let middleNumbers = numbers.slice(3,8);
+
+    numbers.splice(3,1,999);
+
+    output.innerHTML += "<b>Final Array:</b><br>";
+
+    for(let i=0;i<numbers.length;i++){
+        output.innerHTML += numbers[i] + "<br>";
+    }
+
+    output.innerHTML += "<br><b>Copied Middle Array:</b><br>";
+
+    for(let i=0;i<middleNumbers.length;i++){
+        output.innerHTML += middleNumbers[i] + "<br>";
+    }
+
+</script>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Bio Formatter</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 600px;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    textarea {
+        height: 120px;
+        resize: none;
+    }
+
+    button {
+        padding: 12px 20px;
+        margin: 10px 5px 10px 0;
+        border: none;
+        background: #2563eb;
+        color: white;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background: #1d4ed8;
+    }
+
+    #output {
+        margin-top: 20px;
+        background: #eef4ff;
+        padding: 15px;
+        border-radius: 8px;
+        line-height: 1.8;
+        font-size: 17px;
+        text-align: center;
+        justify-content: center;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Student Bio Formatter</h1>
+
+        <input type="text" id="name" placeholder="Student Full Name">
+
+        <input type="text" id="city" placeholder="City">
+
+        <textarea id="intro" placeholder="Short Introduction"></textarea>
+
+        <button onclick="formatInfo()">Format Information</button>
+        <button onclick="checkName()">Check Name</button>
+
+        <div id="output"></div>
+    </div>
+</body>
+<script>
+    function formatInfo() {
+
+        let name = document.getElementById("name").value.trim();
+        let city = document.getElementById("city").value;
+        let intro = document.getElementById("intro").value;
+
+        // length
+        let nameLength = name.length;
+
+        // slice
+        let spaceIndex = name.indexOf(" ");
+        let firstName;
+
+        if (spaceIndex === -1) {
+            firstName = name;
+        } else {
+            firstName = name.slice(0, spaceIndex);
+        }
+
+        // toUpperCase
+        let upperName = name.toUpperCase();
+
+        // toLowerCase
+        let lowerCity = city.toLowerCase();
+
+        // replaceAll
+        let updatedIntro = intro.replaceAll("student", "developer");
+
+        // substring
+        let first20 = updatedIntro.substring(0, 20);
+
+        document.getElementById("output").innerHTML = `
+        <h3>Result</h3>
+
+        <p><strong>Clean Name:</strong> ${name}</p>
+
+        <p><strong>Name Length:</strong> ${nameLength}</p>
+
+        <p><strong>First Name:</strong> ${firstName}</p>
+
+        <p><strong>Uppercase Name:</strong> ${upperName}</p>
+
+        <p><strong>City:</strong> ${lowerCity}</p>
+
+        <p><strong>Updated Introduction:</strong> ${updatedIntro}</p>
+
+        <p><strong>First 20 Characters:</strong> ${first20}</p>
+    `;
+    }
+
+    function checkName() {
+
+        let name = document.getElementById("name").value.trim();
+
+        if (name.indexOf("Bilal") !== -1) {
+            alert("Bilal is present in the name.");
+        } else {
+            alert("Bilal is not present.");
+        }
+
+    }
+</script>
+
+</html>

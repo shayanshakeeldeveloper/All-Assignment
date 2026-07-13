@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Countdown & Duration Calculator</title>
+</head>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:#fff;
+    width:420px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:12px;
+    font-size:16px;
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+#result{
+    margin-top:20px;
+    padding:15px;
+    background:#f8f8f8;
+    border-radius:5px;
+    line-height:1.8;
+    text-align:center;
+    justify-content:center;
+}
+</style>
+<body>
+    <div class="container">
+        <h1>Event Countdown & Duration Calculator</h1>
+
+        <label>Today's Date</label>
+        <input type="date" id="todayDate">
+
+        <label>Event Date</label>
+        <input type="date" id="eventDate">
+
+        <button onclick="calculateTime()">
+            Calculate Remaining Time
+        </button>
+
+        <div id="result"></div>
+    </div>
+</body>
+<script>
+    function calculateTime(){
+
+    const todayInput = document.getElementById("todayDate").value;
+    const eventInput = document.getElementById("eventDate").value;
+
+    if(todayInput === "" || eventInput === ""){
+        document.getElementById("result").innerHTML =
+        "<h3>Please select both dates.</h3>";
+        return;
+    }
+
+    // Convert into Date objects
+    const today = new Date(todayInput);
+    const event = new Date(eventInput);
+
+    // Convert into milliseconds
+    const todayMilliseconds = today.getTime();
+    const eventMilliseconds = event.getTime();
+
+    // Difference in milliseconds
+    const difference = eventMilliseconds - todayMilliseconds;
+
+    if(difference < 0){
+        document.getElementById("result").innerHTML =
+        "<h3>The event date has already passed.</h3>";
+        return;
+    }
+
+    // Conversions
+    const milliseconds = difference;
+    const seconds = difference / 1000;
+    const minutes = seconds / 60;
+    const hours = minutes / 60;
+    const days = hours / 24;
+    const months = days / 30.44;     // Approximate
+    const years = days / 365.25;     // Approximate
+
+    document.getElementById("result").innerHTML = `
+        <h2>Remaining Time</h2>
+        <p><strong>Milliseconds:</strong> ${milliseconds.toFixed(0)}</p>
+        <p><strong>Seconds:</strong> ${seconds.toFixed(2)}</p>
+        <p><strong>Minutes:</strong> ${minutes.toFixed(2)}</p>
+        <p><strong>Hours:</strong> ${hours.toFixed(2)}</p>
+        <p><strong>Days:</strong> ${days.toFixed(2)}</p>
+        <p><strong>Months (Approx.):</strong> ${months.toFixed(2)}</p>
+        <p><strong>Years (Approx.):</strong> ${years.toFixed(2)}</p>
+    `;
+}
+</script>
+</html>
