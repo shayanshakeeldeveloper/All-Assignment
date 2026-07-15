@@ -1,50 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Assignments</title>
+    <title>Shayan Shakeel | Assignments Hub</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <style>
-    body {
-        padding-top: 40px;
-        font-family: Arial, sans-serif;
-        background: #f4f4f4;
-        text-align: center;
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
     }
 
-    h1 {
-        color: darkblue;
-    }
+body{
+    background:#0f172a;
+    color:white;
+    overflow-x:hidden;
+}
 
-    a {
-        display: block;
-        width: 250px;
-        margin: 10px auto;
-        padding: 12px;
-        background: blue;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-    }
+#progressBar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:4px;
+    background:#3b82f6;
+    z-index:999;
+}
 
-    a:hover {
-        background: darkblue;
+.background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+}
+
+.c1{
+    width:300px;
+    height:300px;
+    background:#2563eb;
+    top:10%;
+    left:10%;
+}
+
+.c2{
+    width:250px;
+    height:250px;
+    background:#8b5cf6;
+    right:10%;
+    top:20%;
+}
+
+.c3{
+    width:250px;
+    height:250px;
+    background:#06b6d4;
+    bottom:10%;
+    left:40%;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+}
+
+.typing{
+    margin-top:15px;
+    color:#cbd5e1;
+    font-size:1.2rem;
+}
+
+.hero-btn{
+    margin-top:30px;
+    text-decoration:none;
+    color:white;
+    background:linear-gradient(45deg,#2563eb,#8b5cf6);
+    padding:15px 30px;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.hero-btn:hover{
+    transform:translateY(-5px);
+}
+
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    padding:50px 20px;
+}
+
+.stat-card{
+    width:220px;
+    padding:25px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+}
+
+.search-section{
+    text-align:center;
+    padding:20px;
+}
+
+#searchInput{
+    width:90%;
+    max-width:500px;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    font-size:16px;
+}
+
+.assignments{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    text-decoration:none;
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px rgba(59,130,246,.5);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card span{
+    color:#94a3b8;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#94a3b8;
+}
+
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#2563eb;
+    color:white;
+    cursor:pointer;
+    display:none;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:2.5rem;
     }
-</style>
+}
+</style>    
 <body>
-    <h1>All Assignments</h1>
 
-    <a href="Variables_and_Operators_Assignment/index.html">Variables and Operators</a>
-    <a href="If Else Questions Assignment/if_else.html">If Else Questions</a>
-    <a href="If & Else Operators Assignment/index.html">If & Else Operators</a>
-    <a href="Functions Exercise/index.html">Functions Exercises</a>
-    <a href="Loop & Functions Exercise/index.html">Loop & Functions Exercises</a>
-    <a href="Create Shopping List using Array & Loop/index.html">Create Shopping List using Array & Loop</a>
-    <a href="Array Methods Practice Questions/index.html">Array Methods Practice Questions</a>
-    <a href="Future Event Countdown/index.html">Future Event Countdown</a>
-    <a href="Event Countdown & Duration Calculator/index.html">Event Countdown & Duration Calculator</a>
-    <a href="Student Bio Formatter/index.html">Student Bio Formatter</a>
+<div id="progressBar"></div>
+
+<div class="background">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+</div>
+
+<header class="hero">
+    <h1>Shayan Shakeel</h1>
+
+    <p class="typing">
+        Frontend Developer • Graphic Designer • Freelancer
+    </p>
+
+    <a href="#assignments" class="hero-btn">
+        Explore Assignments
+    </a>
+</header>
+
+<section class="stats">
+    <div class="stat-card">
+        <h2>10+</h2>
+        <p>Assignments</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>100%</h2>
+        <p>Responsive</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>2026</h2>
+        <p>Latest Work</p>
+    </div>
+</section>
+
+<section class="search-section">
+    <input type="text" id="searchInput" placeholder="Search Assignment...">
+</section>
+
+<section id="assignments" class="assignments">
+
+    <a class="card" href="Variables_and_Operators_Assignment/index.html">
+        <h3>Variables and Operators</h3>
+        <span>JavaScript</span>
+    </a>
+
+    <a class="card" href="If Else Questions Assignment/if_else.html">
+        <h3>If Else Questions</h3>
+        <span>JavaScript</span>
+    </a>
+
+    <a class="card" href="If & Else Operators Assignment/index.html">
+        <h3>If & Else Operators</h3>
+        <span>JavaScript</span>
+    </a>
+
+    <a class="card" href="Functions Exercise/index.html">
+        <h3>Functions Exercises</h3>
+        <span>Functions</span>
+    </a>
+
+    <a class="card" href="Loop & Functions Exercise/index.html">
+        <h3>Loop & Functions Exercises</h3>
+        <span>Loops</span>
+    </a>
+
+    <a class="card" href="Create Shopping List using Array & Loop/index.html">
+        <h3>Shopping List App</h3>
+        <span>Array & Loop</span>
+    </a>
+
+    <a class="card" href="Array Methods Practice Questions/index.html">
+        <h3>Array Methods Practice</h3>
+        <span>Arrays</span>
+    </a>
+
+    <a class="card" href="Future Event Countdown/index.html">
+        <h3>Future Event Countdown</h3>
+        <span>Date Object</span>
+    </a>
+
+    <a class="card" href="Event Countdown & Duration Calculator/index.html">
+        <h3>Duration Calculator</h3>
+        <span>Date Object</span>
+    </a>
+
+    <a class="card" href="Student Bio Formatter/index.html">
+        <h3>Student Bio Formatter</h3>
+        <span>String Methods</span>
+    </a>
+
+</section>
+
+<button id="topBtn">↑</button>
+
+<footer>
+    <p>Designed & Developed by Shayan Shakeel ❤️</p>
+</footer>
+
+<script>
+    const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
+
+searchInput.addEventListener("keyup", () => {
+
+    let value = searchInput.value.toLowerCase();
+
+    cards.forEach(card => {
+
+        let text = card.innerText.toLowerCase();
+
+        if(text.includes(value)){
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
+
+window.addEventListener("scroll", () => {
+
+    let scrollTop = document.documentElement.scrollTop;
+
+    let height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    let progress = (scrollTop / height) * 100;
+
+    document.getElementById("progressBar").style.width =
+        progress + "%";
+
+    const topBtn = document.getElementById("topBtn");
+
+    if(scrollTop > 300){
+        topBtn.style.display = "block";
+    }else{
+        topBtn.style.display = "none";
+    }
+
+});
+
+document.getElementById("topBtn").addEventListener("click", () => {
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+</script>
+
 </body>
 </html>
