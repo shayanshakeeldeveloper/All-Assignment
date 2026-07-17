@@ -1,354 +1,3216 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shayan Shakeel | Assignments Hub</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<style>
-    *{
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Shayan Shakeel | Assignment Portfolio</title>
+
+    <meta name="description"
+        content="Professional HTML CSS JavaScript Assignment Portfolio">
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Remix Icons -->
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+    <style>
+        /*========================================
+GOOGLE RESET
+========================================*/
+
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-    }
-
-body{
-    background:#0f172a;
-    color:white;
-    overflow-x:hidden;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
+:root{
+
+    --bg:#050816;
+    --bg2:#0f172a;
+
+    --primary:#3b82f6;
+    --secondary:#8b5cf6;
+
+    --cyan:#06b6d4;
+    --green:#22c55e;
+    --orange:#f97316;
+    --yellow:#eab308;
+    --pink:#ec4899;
+
+    --white:#ffffff;
+
+    --text:#e2e8f0;
+    --muted:#94a3b8;
+
+    --glass:rgba(255,255,255,.07);
+
+    --border:rgba(255,255,255,.12);
+
+    --shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:linear-gradient(135deg,#050816,#0f172a,#111827);
+
+    color:var(--white);
+
+    overflow-x:hidden;
+
+}
+
+/*========================================
+SCROLLBAR
+========================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#0b1225;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(var(--primary),var(--secondary));
+
+    border-radius:30px;
+
+}
+
+/*========================================
+PROGRESS BAR
+========================================*/
+
 #progressBar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:0%;
+
+    height:4px;
+
+    background:linear-gradient(90deg,#3b82f6,#8b5cf6);
+
+    z-index:99999;
+
+}
+
+/*========================================
+BACKGROUND
+========================================*/
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-5;
+
+    overflow:hidden;
+
+}
+
+.blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    animation:floatBlob 12s ease-in-out infinite;
+
+}
+
+.blob1{
+
+    width:350px;
+    height:350px;
+
+    background:#2563eb;
+
+    top:-80px;
+    left:-80px;
+
+}
+
+.blob2{
+
+    width:300px;
+    height:300px;
+
+    background:#8b5cf6;
+
+    right:-80px;
+    top:80px;
+
+}
+
+.blob3{
+
+    width:350px;
+    height:350px;
+
+    background:#06b6d4;
+
+    bottom:-120px;
+    left:35%;
+
+}
+
+.grid-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+}
+
+/*========================================
+LOADER
+========================================*/
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#050816;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999999;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-logo{
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:auto;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.loader-content h2{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.loader-content p{
+
+    color:var(--muted);
+
+    margin-bottom:25px;
+
+}
+
+.loading-bar{
+
+    width:250px;
+
+    height:7px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+}
+
+.loading-bar span{
+
+    display:block;
+
+    height:100%;
+
+    width:40%;
+
+    border-radius:20px;
+
+    background:linear-gradient(90deg,#3b82f6,#8b5cf6);
+
+    animation:loading 1.4s linear infinite;
+
+}
+
+/*========================================
+ANIMATIONS
+========================================*/
+
+@keyframes loading{
+
+0%{
+
+transform:translateX(-120%);
+
+}
+
+100%{
+
+transform:translateX(320%);
+
+}
+
+}
+
+@keyframes floatBlob{
+
+0%,100%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(40px);
+
+}
+
+}
+        /*========================================
+HEADER
+========================================*/
+
+header{
+
     position:fixed;
     top:0;
     left:0;
-    width:0%;
-    height:4px;
-    background:#3b82f6;
-    z-index:999;
-}
-
-.background{
-    position:fixed;
     width:100%;
-    height:100%;
-    overflow:hidden;
-    z-index:-1;
+    z-index:1000;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(8,15,30,.45);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
 }
 
-.circle{
+.navbar{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:18px 40px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+.logo i{
+
+    color:var(--primary);
+
+    font-size:30px;
+
+}
+
+.nav-menu{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.nav-menu a{
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:.35s;
+
+    position:relative;
+
+}
+
+.nav-menu a::after{
+
+    content:"";
+
     position:absolute;
-    border-radius:50%;
-    filter:blur(80px);
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+
+    transition:.35s;
+
 }
 
-.c1{
-    width:300px;
-    height:300px;
-    background:#2563eb;
-    top:10%;
-    left:10%;
+.nav-menu a:hover{
+
+    color:#fff;
+
 }
 
-.c2{
-    width:250px;
-    height:250px;
-    background:#8b5cf6;
-    right:10%;
-    top:20%;
+.nav-menu a:hover::after{
+
+    width:100%;
+
 }
 
-.c3{
-    width:250px;
-    height:250px;
-    background:#06b6d4;
-    bottom:10%;
-    left:40%;
+.nav-buttons{
+
+    display:flex;
+
+    gap:12px;
+
 }
+
+.nav-buttons button{
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    background:var(--glass);
+
+    color:#fff;
+
+    font-size:20px;
+
+    backdrop-filter:blur(20px);
+
+    transition:.3s;
+
+}
+
+.nav-buttons button:hover{
+
+    transform:translateY(-4px);
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+}
+
+/*========================================
+HERO
+========================================*/
 
 .hero{
+
+    max-width:1300px;
+
+    margin:auto;
+
     min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+
+    display:grid;
+
+    grid-template-columns:1fr 500px;
+
     align-items:center;
-    text-align:center;
-    padding:20px;
+
+    gap:70px;
+
+    padding:120px 40px 60px;
+
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:40px;
+
+    background:rgba(59,130,246,.15);
+
+    color:#7dd3fc;
+
+    margin-bottom:25px;
+
+    border:1px solid rgba(59,130,246,.3);
+
 }
 
 .hero h1{
-    font-size:4rem;
+
+    font-size:70px;
+
+    line-height:1.15;
+
+    margin-bottom:15px;
+
 }
 
-.typing{
-    margin-top:15px;
+.hero h1 span{
+
+    background:linear-gradient(90deg,#3b82f6,#8b5cf6,#06b6d4);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero h3{
+
+    font-size:32px;
+
+    color:#94a3b8;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
     color:#cbd5e1;
-    font-size:1.2rem;
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    max-width:650px;
+
 }
 
-.hero-btn{
-    margin-top:30px;
-    text-decoration:none;
-    color:white;
-    background:linear-gradient(45deg,#2563eb,#8b5cf6);
-    padding:15px 30px;
-    border-radius:50px;
-    transition:.3s;
-}
+.hero-buttons{
 
-.hero-btn:hover{
-    transform:translateY(-5px);
-}
-
-.stats{
     display:flex;
-    justify-content:center;
-    gap:25px;
+
+    gap:18px;
+
+    margin-top:35px;
+
     flex-wrap:wrap;
-    padding:50px 20px;
+
 }
 
-.stat-card{
-    width:220px;
-    padding:25px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-    border-radius:20px;
+.btn{
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-weight:600;
+
+    transition:.35s;
+
 }
+
+.primary-btn{
+
+    background:linear-gradient(135deg,#2563eb,#8b5cf6);
+
+    color:white;
+
+    box-shadow:0 15px 40px rgba(37,99,235,.35);
+
+}
+
+.secondary-btn{
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.1);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/*========================================
+HERO STATS
+========================================*/
+
+.hero-stats{
+
+    display:flex;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+    margin-top:50px;
+
+}
+
+.stat-item{
+
+    min-width:120px;
+
+}
+
+.stat-item h2{
+
+    font-size:34px;
+
+    color:#60a5fa;
+
+}
+
+.stat-item span{
+
+    color:#94a3b8;
+
+}
+
+/*========================================
+DEVELOPER CARD
+========================================*/
+
+.developer-card{
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    backdrop-filter:blur(20px);
+
+    padding:45px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.developer-icon{
+
+    width:120px;
+
+    height:120px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:55px;
+
+    background:linear-gradient(135deg,#2563eb,#8b5cf6);
+
+    margin-bottom:25px;
+
+}
+
+.developer-card h2{
+
+    font-size:32px;
+
+    margin-bottom:12px;
+
+}
+
+.developer-card p{
+
+    color:#94a3b8;
+
+}
+
+.skill-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:30px;
+
+}
+
+.skill-tags span{
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+        /*========================================
+SECTION COMMON
+========================================*/
+
+section{
+    padding:100px 40px;
+}
+
+.section-header{
+    max-width:800px;
+    margin:0 auto 60px;
+    text-align:center;
+}
+
+.section-tag{
+    display:inline-block;
+    padding:8px 20px;
+    border-radius:30px;
+    background:rgba(59,130,246,.12);
+    color:#60a5fa;
+    border:1px solid rgba(59,130,246,.25);
+    margin-bottom:20px;
+    font-size:14px;
+    letter-spacing:2px;
+    font-weight:600;
+}
+
+.section-header h2{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.section-header p{
+    color:var(--muted);
+    line-height:1.8;
+    font-size:17px;
+}
+
+/*========================================
+ABOUT
+========================================*/
+
+.about-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+.about-card{
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    text-align:center;
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+
+}
+
+.about-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#3b82f6;
+
+    box-shadow:0 20px 40px rgba(59,130,246,.18);
+
+}
+
+.about-card i{
+
+    font-size:55px;
+
+    color:#60a5fa;
+
+    margin-bottom:20px;
+
+}
+
+.about-card h3{
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.about-card p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+/*========================================
+STATISTICS
+========================================*/
+
+.statistics{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.stat-box{
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:center;
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.25);
+
+}
+
+.stat-box h2{
+
+    font-size:52px;
+
+    color:#3b82f6;
+
+    margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+    color:var(--muted);
+
+}
+
+/*========================================
+SEARCH
+========================================*/
 
 .search-section{
-    text-align:center;
-    padding:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding-top:40px;
+
+    padding-bottom:20px;
+
 }
 
-#searchInput{
-    width:90%;
-    max-width:500px;
-    padding:15px;
+.search-box{
+
+    width:100%;
+
+    max-width:700px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:var(--glass);
+
+    border:1px solid var(--border);
+
+    border-radius:60px;
+
+    padding:18px 28px;
+
+    backdrop-filter:blur(20px);
+
+}
+
+.search-box i{
+
+    font-size:22px;
+
+    color:#60a5fa;
+
+}
+
+.search-box input{
+
+    flex:1;
+
+    background:none;
+
     border:none;
-    border-radius:50px;
-    font-size:16px;
-}
 
-.assignments{
-    max-width:1200px;
-    margin:auto;
-    padding:40px 20px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
+    outline:none;
 
-.card{
-    text-decoration:none;
     color:white;
-    padding:25px;
-    border-radius:20px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
+
+    font-size:17px;
+
+}
+
+.search-box input::placeholder{
+
+    color:#94a3b8;
+
+}
+
+/*========================================
+FILTER BUTTONS
+========================================*/
+
+.filters{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    padding-top:10px;
+
+    padding-bottom:80px;
+
+}
+
+.filter-btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:13px 26px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+    font-weight:600;
+
+}
+
+.filter-btn:hover{
+
+    background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+
+    transform:translateY(-4px);
+
+}
+
+.filter-btn.active{
+
+    background:linear-gradient(135deg,#2563eb,#8b5cf6);
+
+}
+        /*========================================
+ASSIGNMENT GRID
+========================================*/
+
+.assignment-grid{
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.assignment-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(18px);
+    border-radius:25px;
+    padding:28px;
+    text-decoration:none;
+    color:#fff;
+    transition:.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.assignment-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,
+    rgba(59,130,246,.15),
+    rgba(139,92,246,.08));
+    opacity:0;
     transition:.4s;
 }
 
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 30px rgba(59,130,246,.5);
+.assignment-card:hover::before{
+    opacity:1;
 }
 
-.card h3{
+.assignment-card:hover{
+    transform:translateY(-12px);
+    border-color:#3b82f6;
+    box-shadow:0 20px 50px rgba(37,99,235,.25);
+}
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.card-icon{
+    width:70px;
+    height:70px;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    color:#fff;
+}
+
+.blue{
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+}
+
+.purple{
+    background:linear-gradient(135deg,#7c3aed,#8b5cf6);
+}
+
+.green{
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+}
+
+.orange{
+    background:linear-gradient(135deg,#ea580c,#f97316);
+}
+
+.cyan{
+    background:linear-gradient(135deg,#0891b2,#06b6d4);
+}
+
+.yellow{
+    background:linear-gradient(135deg,#ca8a04,#eab308);
+}
+
+.pink{
+    background:linear-gradient(135deg,#db2777,#ec4899);
+}
+
+.card-badge{
+    padding:8px 16px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    font-size:13px;
+    color:#cbd5e1;
+}
+
+.assignment-card h3{
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.assignment-card p{
+    color:#94a3b8;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.card-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#60a5fa;
+    font-weight:600;
+}
+
+.card-footer i{
+    font-size:22px;
+}
+
+/*========================================
+CONTACT
+========================================*/
+
+.contact{
+    text-align:center;
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+/*========================================
+FOOTER
+========================================*/
+
+footer{
+    padding:45px 20px;
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#94a3b8;
+}
+
+footer p{
+    font-size:20px;
+    color:#fff;
     margin-bottom:10px;
 }
 
-.card span{
-    color:#94a3b8;
-}
+/*========================================
+SCROLL BUTTON
+========================================*/
 
-footer{
-    text-align:center;
-    padding:40px;
-    color:#94a3b8;
-}
-
-#topBtn{
+#scrollTop{
     position:fixed;
-    right:20px;
-    bottom:20px;
-    width:50px;
-    height:50px;
+    right:25px;
+    bottom:25px;
+    width:58px;
+    height:58px;
     border:none;
     border-radius:50%;
-    background:#2563eb;
-    color:white;
+    background:linear-gradient(135deg,#2563eb,#8b5cf6);
+    color:#fff;
+    font-size:24px;
     cursor:pointer;
     display:none;
+    z-index:999;
+    box-shadow:0 15px 35px rgba(37,99,235,.35);
+    transition:.35s;
+}
+
+#scrollTop:hover{
+    transform:translateY(-5px) scale(1.08);
+}
+
+/*========================================
+RESPONSIVE
+========================================*/
+
+@media(max-width:992px){
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-right{
+margin-top:60px;
+}
+
+.hero-buttons,
+.hero-stats{
+justify-content:center;
+}
+
+.nav-menu{
+display:none;
+}
+
 }
 
 @media(max-width:768px){
-    .hero h1{
-        font-size:2.5rem;
-    }
+
+.hero h1{
+font-size:46px;
 }
-</style>    
+
+.section-header h2{
+font-size:34px;
+}
+
+.hero h3{
+font-size:24px;
+}
+
+.developer-card{
+padding:30px;
+}
+
+.navbar{
+padding:18px 20px;
+}
+
+section{
+padding:80px 20px;
+}
+
+}
+
+@media(max-width:500px){
+
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.assignment-grid{
+grid-template-columns:1fr;
+}
+
+.search-box{
+padding:15px 20px;
+}
+
+.hero-buttons .btn{
+width:100%;
+justify-content:center;
+}
+
+}
+    </style>
+
+</head>
+
 <body>
 
-<div id="progressBar"></div>
+    <!-- ===========================
+        LOADING SCREEN
+    ============================ -->
 
-<div class="background">
-    <div class="circle c1"></div>
-    <div class="circle c2"></div>
-    <div class="circle c3"></div>
-</div>
+    <div id="loader">
 
-<header class="hero">
-    <h1>Shayan Shakeel</h1>
+        <div class="loader-content">
 
-    <p class="typing">
-        Web Developer • Graphic Designer 
-    </p>
+            <div class="loader-logo">
 
-    <a href="#assignments" class="hero-btn">
-        Explore Assignments
-    </a>
-</header>
+                SS
 
-<section class="stats">
-    <div class="stat-card">
-        <h2>10+</h2>
-        <p>Assignments</p>
+            </div>
+
+            <h2>
+
+                Shayan Shakeel
+
+            </h2>
+
+            <p>
+
+                Loading Portfolio...
+
+            </p>
+
+            <div class="loading-bar">
+
+                <span></span>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="stat-card">
-        <h2>100%</h2>
-        <p>Responsive</p>
+    <!-- ===========================
+        PROGRESS BAR
+    ============================ -->
+
+    <div id="progressBar"></div>
+
+    <!-- ===========================
+        BACKGROUND
+    ============================ -->
+
+    <div class="background">
+
+        <span class="blob blob1"></span>
+
+        <span class="blob blob2"></span>
+
+        <span class="blob blob3"></span>
+
+        <span class="grid-overlay"></span>
+
     </div>
 
-    <div class="stat-card">
-        <h2>2026</h2>
-        <p>Latest Work</p>
+    <!-- ===========================
+        HEADER
+    ============================ -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="#home"
+                class="logo">
+
+                <i class="ri-code-box-fill"></i>
+
+                <span>
+
+                    Shayan Shakeel
+
+                </span>
+
+            </a>
+
+            <ul class="nav-menu">
+
+                <li>
+
+                    <a href="#home">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#about">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#assignments">
+
+                        Assignments
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#contact">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <div class="nav-buttons">
+
+                <button id="themeBtn">
+
+                    <i class="ri-moon-line"></i>
+
+                </button>
+
+                <button id="menuBtn">
+
+                    <i class="ri-menu-3-line"></i>
+
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ===========================
+        HERO
+    ============================ -->
+
+    <section id="home"
+        class="hero">
+
+        <div class="hero-left">
+
+            <div class="hero-badge">
+
+                🚀 Professional Frontend Portfolio
+
+            </div>
+
+            <h1>
+
+                Hi,
+
+                I'm
+
+                <span>
+
+                    Shayan Shakeel
+
+                </span>
+
+            </h1>
+
+            <h3 id="typingText">
+
+                Frontend Developer
+
+            </h3>
+
+            <p>
+
+                Welcome to my Assignment Portfolio.
+
+                Here you'll find my HTML,
+
+                CSS and JavaScript assignments
+
+                with premium UI,
+
+                animations,
+
+                responsive layouts,
+
+                and modern web design.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#assignments"
+                    class="btn primary-btn">
+
+                    <i class="ri-folder-open-fill"></i>
+
+                    Explore Work
+
+                </a>
+
+                <a href="https://github.com/ShayanShakeelDeveloper"
+                    target="_blank"
+                    class="btn secondary-btn">
+
+                    <i class="ri-github-fill"></i>
+
+                    GitHub
+
+                </a>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div class="stat-item">
+
+                    <h2>
+
+                        10+
+
+                    </h2>
+
+                    <span>
+
+                        Assignments
+
+                    </span>
+
+                </div>
+
+                <div class="stat-item">
+
+                    <h2>
+
+                        100%
+
+                    </h2>
+
+                    <span>
+
+                        Responsive
+
+                    </span>
+
+                </div>
+
+                <div class="stat-item">
+
+                    <h2>
+
+                        2026
+
+                    </h2>
+
+                    <span>
+
+                        Latest
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-right">
+
+            <div class="developer-card">
+
+                <div class="developer-icon">
+
+                    <i class="ri-code-s-slash-fill"></i>
+
+                </div>
+
+                <h2>
+
+                    Frontend Developer
+
+                </h2>
+
+                <p>
+
+                    HTML • CSS • JavaScript
+
+                </p>
+
+                <div class="skill-tags">
+
+                    <span>HTML</span>
+
+                    <span>CSS</span>
+
+                    <span>JavaScript</span>
+
+                    <span>Responsive</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== HTML PART 2 STARTS HERE ===== -->
+    <!-- ===========================
+ABOUT SECTION
+=========================== -->
+
+<section id="about" class="about">
+
+    <div class="section-header">
+
+        <span class="section-tag">
+
+            ABOUT ME
+
+        </span>
+
+        <h2>
+
+            Building Modern Web Experiences
+
+        </h2>
+
+        <p>
+
+            I'm passionate about creating beautiful,
+
+            responsive and interactive websites.
+
+            Every assignment in this portfolio represents
+
+            a step forward in my frontend development journey.
+
+        </p>
+
     </div>
+
+    <div class="about-container">
+
+        <div class="about-card">
+
+            <i class="ri-code-s-slash-line"></i>
+
+            <h3>
+
+                Clean Code
+
+            </h3>
+
+            <p>
+
+                Writing structured,
+
+                readable and maintainable HTML,
+
+                CSS and JavaScript.
+
+            </p>
+
+        </div>
+
+        <div class="about-card">
+
+            <i class="ri-smartphone-line"></i>
+
+            <h3>
+
+                Responsive Design
+
+            </h3>
+
+            <p>
+
+                Every project works perfectly on
+
+                Desktop,
+
+                Tablet,
+
+                and Mobile devices.
+
+            </p>
+
+        </div>
+
+        <div class="about-card">
+
+            <i class="ri-palette-line"></i>
+
+            <h3>
+
+                Modern UI
+
+            </h3>
+
+            <p>
+
+                Beautiful layouts,
+
+                animations,
+
+                gradients,
+
+                glassmorphism,
+
+                and premium styling.
+
+            </p>
+
+        </div>
+
+    </div>
+
 </section>
+
+<!-- ===========================
+STATISTICS
+=========================== -->
+
+<section class="statistics">
+
+    <div class="stat-box">
+
+        <h2 class="counter"
+
+            data-target="10">
+
+            0
+
+        </h2>
+
+        <p>
+
+            Total Assignments
+
+        </p>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h2 class="counter"
+
+            data-target="3">
+
+            0
+
+        </h2>
+
+        <p>
+
+            Technologies
+
+        </p>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h2 class="counter"
+
+            data-target="100">
+
+            0
+
+        </h2>
+
+        <p>
+
+            Responsive Projects
+
+        </p>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h2 class="counter"
+
+            data-target="2026">
+
+            0
+
+        </h2>
+
+        <p>
+
+            Latest Portfolio
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+SEARCH
+=========================== -->
 
 <section class="search-section">
-    <input type="text" id="searchInput" placeholder="Search Assignment...">
+
+    <div class="search-box">
+
+        <i class="ri-search-line"></i>
+
+        <input
+
+            type="text"
+
+            id="searchInput"
+
+            placeholder="Search Assignment..."
+
+        >
+
+    </div>
+
 </section>
 
-<section id="assignments" class="assignments">
+<!-- ===========================
+FILTERS
+=========================== -->
 
-    <a class="card" href="Variables_and_Operators_Assignment/index.html">
-        <h3>Variables and Operators</h3>
-        <span>JavaScript</span>
-    </a>
+<section class="filters">
 
-    <a class="card" href="If Else Questions Assignment/if_else.html">
-        <h3>If Else Questions</h3>
-        <span>JavaScript</span>
-    </a>
+    <button
 
-    <a class="card" href="If & Else Operators Assignment/index.html">
-        <h3>If & Else Operators</h3>
-        <span>JavaScript</span>
-    </a>
+        class="filter-btn active"
 
-    <a class="card" href="Functions Exercise/index.html">
-        <h3>Functions Exercises</h3>
-        <span>Functions</span>
-    </a>
+        data-filter="all">
 
-    <a class="card" href="Loop & Functions Exercise/index.html">
-        <h3>Loop & Functions Exercises</h3>
-        <span>Loops</span>
-    </a>
+        All
 
-    <a class="card" href="Create Shopping List using Array & Loop/index.html">
-        <h3>Shopping List App</h3>
-        <span>Array & Loop</span>
-    </a>
+    </button>
 
-    <a class="card" href="Array Methods Practice Questions/index.html">
-        <h3>Array Methods Practice</h3>
-        <span>Arrays</span>
-    </a>
+    <button
 
-    <a class="card" href="Future Event Countdown/index.html">
-        <h3>Future Event Countdown</h3>
+        class="filter-btn"
+
+        data-filter="javascript">
+
+        JavaScript
+
+    </button>
+
+    <button
+
+        class="filter-btn"
+
+        data-filter="functions">
+
+        Functions
+
+    </button>
+
+    <button
+
+        class="filter-btn"
+
+        data-filter="array">
+
+        Arrays
+
+    </button>
+
+    <button
+
+        class="filter-btn"
+
+        data-filter="date">
+
+        Date
+
+    </button>
+
+    <button
+
+        class="filter-btn"
+
+        data-filter="string">
+
+        String
+
+    </button>
+
+</section>
+
+<!-- ===========================
+ASSIGNMENT SECTION
+=========================== -->
+
+<section
+
+    id="assignments"
+
+    class="assignments">
+
+    <div class="section-header">
+
+        <span class="section-tag">
+
+            MY WORK
+
+        </span>
+
+        <h2>
+
+            JavaScript Assignments
+
+        </h2>
+
+        <p>
+
+            Click any assignment below
+
+            to open and explore the project.
+
+        </p>
+
+    </div>
+
+    <div class="assignment-grid">
+
+<!-- ===== HTML PART 3 STARTS HERE ===== -->
+        <!-- ===========================
+Assignment Card 1
+=========================== -->
+
+<a href="Variables_and_Operators_Assignment/index.html"
+   class="assignment-card"
+   data-category="javascript">
+
+    <div class="card-top">
+
+        <div class="card-icon blue">
+
+            <i class="ri-code-box-line"></i>
+
+        </div>
+
+        <span class="card-badge">
+
+            JavaScript
+
+        </span>
+
+    </div>
+
+    <h3>
+
+        Variables & Operators
+
+    </h3>
+
+    <p>
+
+        Learn JavaScript variables,
+
+        data types,
+
+        arithmetic operators,
+
+        and basic calculations.
+
+    </p>
+
+    <div class="card-footer">
+
+        <span>
+
+            Beginner
+
+        </span>
+
+        <i class="ri-arrow-right-line"></i>
+
+    </div>
+
+</a>
+
+<!-- ===========================
+Assignment Card 2
+=========================== -->
+
+<a href="If Else Questions Assignment/if_else.html"
+   class="assignment-card"
+   data-category="javascript">
+
+    <div class="card-top">
+
+        <div class="card-icon purple">
+
+            <i class="ri-git-branch-line"></i>
+
+        </div>
+
+        <span class="card-badge">
+
+            JavaScript
+
+        </span>
+
+    </div>
+
+    <h3>
+
+        If Else Questions
+
+    </h3>
+
+    <p>
+
+        Practice decision making,
+
+        conditional statements,
+
+        nested conditions,
+
+        and logical operators.
+
+    </p>
+
+    <div class="card-footer">
+
+        <span>
+
+            Beginner
+
+        </span>
+
+        <i class="ri-arrow-right-line"></i>
+
+    </div>
+
+</a>
+
+<!-- ===========================
+Assignment Card 3
+=========================== -->
+
+<a href="If & Else Operators Assignment/index.html"
+   class="assignment-card"
+   data-category="javascript">
+
+    <div class="card-top">
+
+        <div class="card-icon orange">
+
+            <i class="ri-flow-chart"></i>
+
+        </div>
+
+        <span class="card-badge">
+
+            JavaScript
+
+        </span>
+
+    </div>
+
+    <h3>
+
+        If Else Operators
+
+    </h3>
+
+    <p>
+
+        Build logical programs
+
+        using comparison,
+
+        logical,
+
+        and conditional operators.
+
+    </p>
+
+    <div class="card-footer">
+
+        <span>
+
+            Intermediate
+
+        </span>
+
+        <i class="ri-arrow-right-line"></i>
+
+    </div>
+
+</a>
+
+<!-- ===========================
+Assignment Card 4
+=========================== -->
+
+<a href="Functions Exercise/index.html"
+   class="assignment-card"
+   data-category="functions">
+
+    <div class="card-top">
+
+        <div class="card-icon green">
+
+            <i class="ri-function-line"></i>
+
+        </div>
+
+        <span class="card-badge">
+
+            Functions
+
+        </span>
+
+    </div>
+
+    <h3>
+
+        Functions Exercise
+
+    </h3>
+
+    <p>
+
+        Learn function declaration,
+
+        parameters,
+
+        return values,
+
+        and reusable code.
+
+    </p>
+
+    <div class="card-footer">
+
+        <span>
+
+            Intermediate
+
+        </span>
+
+        <i class="ri-arrow-right-line"></i>
+
+    </div>
+
+</a>
+
+<!-- ===========================
+Assignment Card 5
+=========================== -->
+
+<a href="Loop & Functions Exercise/index.html"
+   class="assignment-card"
+   data-category="functions">
+
+    <div class="card-top">
+
+        <div class="card-icon cyan">
+
+            <i class="ri-repeat-line"></i>
+
+        </div>
+
+        <span class="card-badge">
+
+            Loops
+
+        </span>
+
+    </div>
+
+    <h3>
+
+        Loop & Functions
+
+    </h3>
+
+    <p>
+
+        Combine loops
+
+        with JavaScript functions
+
+        to solve practical problems.
+
+    </p>
+
+    <div class="card-footer">
+
+        <span>
+
+            Intermediate
+
+        </span>
+
+        <i class="ri-arrow-right-line"></i>
+
+    </div>
+
+</a>
+
+<!-- ===== HTML PART 4 STARTS HERE ===== -->
+        <!-- ===========================
+Assignment Card 6
+=========================== -->
+
+<a href="Create Shopping List using Array & Loop/index.html"
+   class="assignment-card"
+   data-category="array">
+
+    <div class="card-top">
+
+        <div class="card-icon pink">
+
+            <i class="ri-shopping-cart-2-line"></i>
+
+        </div>
+
+        <span class="card-badge">
+            Arrays
+        </span>
+
+    </div>
+
+    <h3>Shopping List App</h3>
+
+    <p>
+        Create a dynamic shopping list using
+        Arrays, Loops and JavaScript.
+    </p>
+
+    <div class="card-footer">
+
+        <span>Intermediate</span>
+
+        <i class="ri-arrow-right-line"></i>
+
+    </div>
+
+</a>
+
+<!-- ===========================
+Assignment Card 7
+=========================== -->
+
+<a href="Array Methods Practice Questions/index.html"
+   class="assignment-card"
+   data-category="array">
+
+    <div class="card-top">
+
+        <div class="card-icon yellow">
+
+            <i class="ri-stack-line"></i>
+
+        </div>
+
+        <span class="card-badge">
+            Arrays
+        </span>
+
+    </div>
+
+    <h3>Array Methods</h3>
+
+    <p>
+        Practice push(),
+        pop(),
+        shift(),
+        unshift(),
+        map(),
+        filter()
+        and more.
+    </p>
+
+    <div class="card-footer">
+
+        <span>Intermediate</span>
+
+        <i class="ri-arrow-right-line"></i>
+
+    </div>
+
+</a>
+
+<!-- ===========================
+Assignment Card 8
+=========================== -->
+
+<a href="Future Event Countdown/index.html"
+   class="assignment-card"
+   data-category="date">
+
+    <div class="card-top">
+
+        <div class="card-icon blue">
+
+            <i class="ri-calendar-event-line"></i>
+
+        </div>
+
+        <span class="card-badge">
+            Date
+        </span>
+
+    </div>
+
+    <h3>Future Event Countdown</h3>
+
+    <p>
+        Countdown timer using
+        JavaScript Date Object.
+    </p>
+
+    <div class="card-footer">
+
         <span>Date Object</span>
-    </a>
 
-    <a class="card" href="Event Countdown & Duration Calculator/index.html">
-        <h3>Duration Calculator</h3>
+        <i class="ri-arrow-right-line"></i>
+
+    </div>
+
+</a>
+
+<!-- ===========================
+Assignment Card 9
+=========================== -->
+
+<a href="Event Countdown & Duration Calculator/index.html"
+   class="assignment-card"
+   data-category="date">
+
+    <div class="card-top">
+
+        <div class="card-icon purple">
+
+            <i class="ri-timer-line"></i>
+
+        </div>
+
+        <span class="card-badge">
+            Date
+        </span>
+
+    </div>
+
+    <h3>Duration Calculator</h3>
+
+    <p>
+        Calculate remaining days,
+        months and years
+        between two dates.
+    </p>
+
+    <div class="card-footer">
+
         <span>Date Object</span>
-    </a>
 
-    <a class="card" href="Student Bio Formatter/index.html">
-        <h3>Student Bio Formatter</h3>
+        <i class="ri-arrow-right-line"></i>
+
+    </div>
+
+</a>
+
+<!-- ===========================
+Assignment Card 10
+=========================== -->
+
+<a href="Student Bio Formatter/index.html"
+   class="assignment-card"
+   data-category="string">
+
+    <div class="card-top">
+
+        <div class="card-icon green">
+
+            <i class="ri-user-line"></i>
+
+        </div>
+
+        <span class="card-badge">
+            String
+        </span>
+
+    </div>
+
+    <h3>Student Bio Formatter</h3>
+
+    <p>
+        Practice trim(),
+        slice(),
+        length(),
+        uppercase(),
+        lowercase()
+        and more.
+    </p>
+
+    <div class="card-footer">
+
         <span>String Methods</span>
-    </a>
+
+        <i class="ri-arrow-right-line"></i>
+
+    </div>
+
+</a>
+
+</div>
 
 </section>
 
-<button id="topBtn">↑</button>
+<!-- ===========================
+CONTACT
+=========================== -->
+
+<section id="contact" class="contact">
+
+    <div class="section-header">
+
+        <span class="section-tag">
+
+            CONTACT
+
+        </span>
+
+        <h2>
+
+            Let's Connect
+
+        </h2>
+
+        <p>
+
+            Thank you for visiting my Assignment Portfolio.
+
+        </p>
+
+    </div>
+
+    <div class="contact-buttons">
+
+        <a href="https://github.com/ShayanShakeelDeveloper"
+           target="_blank"
+           class="btn primary-btn">
+
+            <i class="ri-github-fill"></i>
+
+            GitHub
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+FOOTER
+=========================== -->
 
 <footer>
-    <p>Designed & Developed by Shayan Shakeel ❤️</p>
+
+    <p>
+
+        © 2026 Shayan Shakeel
+
+    </p>
+
+    <span>
+
+        Designed & Developed with ❤️ using HTML CSS JavaScript
+
+    </span>
+
 </footer>
 
+<button id="scrollTop">
+
+    <i class="ri-arrow-up-line"></i>
+
+</button>
+
 <script>
-    const searchInput = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".card");
+    /* ========================================
+LOADER
+======================================== */
 
-searchInput.addEventListener("keyup", () => {
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.getElementById("loader").style.opacity = "0";
 
-    let value = searchInput.value.toLowerCase();
+        setTimeout(() => {
+            document.getElementById("loader").style.display = "none";
+        }, 500);
+
+    }, 1200);
+});
+
+
+/* ========================================
+SCROLL PROGRESS BAR
+======================================== */
+
+const progressBar = document.getElementById("progressBar");
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop = window.scrollY;
+
+    const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+    const progress = (scrollTop / docHeight) * 100;
+
+    progressBar.style.width = progress + "%";
+
+});
+
+
+/* ========================================
+SCROLL TO TOP BUTTON
+======================================== */
+
+const scrollBtn = document.getElementById("scrollTop");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 500) {
+
+        scrollBtn.style.display = "block";
+
+    } else {
+
+        scrollBtn.style.display = "none";
+
+    }
+
+});
+
+scrollBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+});
+
+
+/* ========================================
+TYPING EFFECT
+======================================== */
+
+const typing = document.getElementById("typingText");
+
+const words = [
+
+    "Frontend Developer",
+
+    "HTML Developer",
+
+    "CSS Expert",
+
+    "JavaScript Learner"
+
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+
+    const currentWord = words[wordIndex];
+
+    if (!deleting) {
+
+        typing.textContent =
+            currentWord.substring(0, charIndex++);
+
+        if (charIndex > currentWord.length) {
+
+            deleting = true;
+
+            setTimeout(typeEffect, 1200);
+
+            return;
+
+        }
+
+    } else {
+
+        typing.textContent =
+            currentWord.substring(0, charIndex--);
+
+        if (charIndex === 0) {
+
+            deleting = false;
+
+            wordIndex++;
+
+            if (wordIndex >= words.length) {
+
+                wordIndex = 0;
+
+            }
+
+        }
+
+    }
+
+    setTimeout(typeEffect, deleting ? 60 : 120);
+
+}
+
+typeEffect();
+
+
+/* ========================================
+COUNTER ANIMATION
+======================================== */
+
+const counters =
+    document.querySelectorAll(".counter");
+
+const counterObserver =
+    new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                const counter = entry.target;
+
+                const target =
+                    +counter.dataset.target;
+
+                let count = 0;
+
+                const speed = target / 100;
+
+                const update = () => {
+
+                    count += speed;
+
+                    if (count < target) {
+
+                        counter.innerText =
+                            Math.floor(count);
+
+                        requestAnimationFrame(update);
+
+                    } else {
+
+                        counter.innerText = target;
+
+                    }
+
+                };
+
+                update();
+
+                counterObserver.unobserve(counter);
+
+            }
+
+        });
+
+    });
+
+counters.forEach(counter => {
+
+    counterObserver.observe(counter);
+
+});
+
+
+/* ========================================
+FILTER BUTTONS
+======================================== */
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const cards =
+    document.querySelectorAll(".assignment-card");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn =>
+            btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        const filter =
+            button.dataset.filter;
+
+        cards.forEach(card => {
+
+            if (
+                filter === "all" ||
+                card.dataset.category === filter
+            ) {
+
+                card.style.display = "block";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* ========================================
+SEARCH ASSIGNMENTS
+======================================== */
+
+const search =
+    document.getElementById("searchInput");
+
+search.addEventListener("keyup", () => {
+
+    const value =
+        search.value.toLowerCase();
 
     cards.forEach(card => {
 
-        let text = card.innerText.toLowerCase();
+        const text =
+            card.innerText.toLowerCase();
 
-        if(text.includes(value)){
+        if (text.includes(value)) {
+
             card.style.display = "block";
+
         } else {
+
             card.style.display = "none";
+
         }
 
     });
 
 });
 
+
+/* ========================================
+FADE IN ANIMATION
+======================================== */
+
+const observer =
+    new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+
+                entry.target.style.transform =
+                    "translateY(0)";
+
+            }
+
+        });
+
+    }, {
+
+        threshold: 0.2
+
+    });
+
+document.querySelectorAll(
+    ".about-card, .stat-box, .assignment-card"
+).forEach(item => {
+
+    item.style.opacity = "0";
+
+    item.style.transform = "translateY(50px)";
+
+    item.style.transition =
+        "all .8s ease";
+
+    observer.observe(item);
+
+});
+
+
+/* ========================================
+THEME BUTTON (Demo)
+======================================== */
+
+const themeBtn =
+    document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+
+    alert("Dark Theme is already enabled.");
+
+});
+
+
+/* ========================================
+MENU BUTTON (Mobile Demo)
+======================================== */
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+menuBtn.addEventListener("click", () => {
+
+    alert("Mobile Menu can be added later.");
+
+});
+    /* ==========================
+LOADER
+========================== */
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        document.getElementById("loader").style.opacity = "0";
+        document.getElementById("loader").style.visibility = "hidden";
+    }, 1200);
+});
+
+
+/* ==========================
+SCROLL PROGRESS BAR
+========================== */
+
 window.addEventListener("scroll", () => {
 
-    let scrollTop = document.documentElement.scrollTop;
+    const scrollTop = document.documentElement.scrollTop;
 
-    let height =
+    const height =
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
 
-    let progress = (scrollTop / height) * 100;
+    const progress = (scrollTop / height) * 100;
 
     document.getElementById("progressBar").style.width =
         progress + "%";
 
-    const topBtn = document.getElementById("topBtn");
+});
 
-    if(scrollTop > 300){
-        topBtn.style.display = "block";
-    }else{
-        topBtn.style.display = "none";
+
+/* ==========================
+TYPING EFFECT
+========================== */
+
+const words = [
+    "Frontend Developer",
+    "HTML Expert",
+    "CSS Designer",
+    "JavaScript Learner"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const typing = document.getElementById("typingText");
+
+function typeEffect() {
+
+    const current = words[wordIndex];
+
+    if (!deleting) {
+
+        typing.textContent =
+            current.substring(0, charIndex++);
+
+        if (charIndex > current.length) {
+            deleting = true;
+
+            setTimeout(typeEffect, 1500);
+
+            return;
+        }
+
+    } else {
+
+        typing.textContent =
+            current.substring(0, charIndex--);
+
+        if (charIndex < 0) {
+
+            deleting = false;
+
+            wordIndex++;
+
+            if (wordIndex >= words.length)
+                wordIndex = 0;
+        }
+    }
+
+    setTimeout(typeEffect, deleting ? 60 : 120);
+
+}
+
+typeEffect();
+
+
+/* ==========================
+COUNTER
+========================== */
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            const counter = entry.target;
+
+            const target = +counter.dataset.target;
+
+            let count = 0;
+
+            const speed = target / 80;
+
+            function update() {
+
+                count += speed;
+
+                if (count < target) {
+
+                    counter.innerText =
+                        Math.floor(count);
+
+                    requestAnimationFrame(update);
+
+                } else {
+
+                    counter.innerText = target;
+
+                }
+
+            }
+
+            update();
+
+            counterObserver.unobserve(counter);
+
+        }
+
+    });
+
+}, {
+    threshold: .5
+});
+
+counters.forEach(counter => {
+    counterObserver.observe(counter);
+});
+
+
+/* ==========================
+SEARCH
+========================== */
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const cards =
+    document.querySelectorAll(".assignment-card");
+
+searchInput.addEventListener("keyup", () => {
+
+    const value =
+        searchInput.value.toLowerCase();
+
+    cards.forEach(card => {
+
+        const title =
+            card.querySelector("h3").innerText.toLowerCase();
+
+        if (title.includes(value)) {
+
+            card.style.display = "block";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+});
+
+
+/* ==========================
+FILTER BUTTONS
+========================== */
+
+const buttons =
+    document.querySelectorAll(".filter-btn");
+
+buttons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        buttons.forEach(b =>
+            b.classList.remove("active"));
+
+        btn.classList.add("active");
+
+        const filter =
+            btn.dataset.filter;
+
+        cards.forEach(card => {
+
+            if (
+                filter === "all" ||
+                card.dataset.category === filter
+            ) {
+
+                card.style.display = "block";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* ==========================
+SCROLL TOP BUTTON
+========================== */
+
+const scrollBtn =
+    document.getElementById("scrollTop");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 500) {
+
+        scrollBtn.style.display = "block";
+
+    } else {
+
+        scrollBtn.style.display = "none";
+
     }
 
 });
 
-document.getElementById("topBtn").addEventListener("click", () => {
+scrollBtn.onclick = () => {
 
     window.scrollTo({
-        top:0,
-        behavior:"smooth"
+
+        top: 0,
+
+        behavior: "smooth"
+
     });
+
+};
+
+
+/* ==========================
+THEME BUTTON
+========================== */
+
+const themeBtn =
+    document.getElementById("themeBtn");
+
+let dark = true;
+
+themeBtn.addEventListener("click", () => {
+
+    if (dark) {
+
+        document.body.style.background =
+            "#f5f5f5";
+
+        document.body.style.color =
+            "#111";
+
+        themeBtn.innerHTML =
+            '<i class="ri-sun-line"></i>';
+
+    } else {
+
+        document.body.style.background =
+            "linear-gradient(135deg,#050816,#0f172a,#111827)";
+
+        document.body.style.color =
+            "#fff";
+
+        themeBtn.innerHTML =
+            '<i class="ri-moon-line"></i>';
+
+    }
+
+    dark = !dark;
+
+});
+
+
+/* ==========================
+SCROLL REVEAL
+========================== */
+
+const revealElements =
+    document.querySelectorAll(
+        ".about-card,.assignment-card,.stat-box"
+    );
+
+const reveal = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.style.opacity = "1";
+
+            entry.target.style.transform =
+                "translateY(0)";
+
+        }
+
+    });
+
+}, {
+    threshold: .15
+});
+
+revealElements.forEach(el => {
+
+    el.style.opacity = "0";
+
+    el.style.transform = "translateY(60px)";
+
+    el.style.transition = ".8s";
+
+    reveal.observe(el);
+
+});
+
+
+/* ==========================
+MENU BUTTON
+========================== */
+
+document.getElementById("menuBtn")
+.addEventListener("click", () => {
+
+    alert("Mobile Menu Coming Soon!");
 
 });
 </script>
 
 </body>
+
 </html>
