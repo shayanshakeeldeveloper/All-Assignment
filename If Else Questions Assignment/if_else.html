@@ -1,22 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>If Else Questions Assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+
+        font-family: Poppins, sans-serif;
+
+        background: linear-gradient(135deg, #050816, #0f172a, #111827);
+
+        color: white;
+
+        padding: 60px 20px;
+
+    }
+
+    .container {
+
+        max-width: 1100px;
+
+        margin: auto;
+
+    }
+
+    h1 {
+
+        text-align: center;
+
+        font-size: 42px;
+
+        margin-bottom: 40px;
+
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+
+        --webkit-background-clip: text;
+
+        -webkit-text-fill-color: white;
+
+    }
+
+    .grid {
+
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+        gap: 25px;
+
+    }
+
+    .card {
+
+        background: rgba(255, 255, 255, .06);
+
+        backdrop-filter: blur(18px);
+
+        border: 1px solid rgba(255, 255, 255, .08);
+
+        border-radius: 22px;
+
+        padding: 25px;
+
+        transition: .35s;
+
+    }
+
+    .card:hover {
+
+        transform: translateY(-8px);
+
+        border-color: #3b82f6;
+
+        box-shadow: 0 20px 40px rgba(37, 99, 235, .25);
+
+    }
+
+    .card i {
+
+        font-size: 40px;
+
+        color: #60a5fa;
+
+        margin-bottom: 15px;
+
+        display: block;
+
+    }
+
+    .card h3 {
+
+        margin-bottom: 10px;
+
+        font-size: 22px;
+
+    }
+
+    .card p {
+
+        line-height: 1.8;
+
+        color: #cbd5e1;
+
+    }
+
+    .note {
+
+        margin-top: 40px;
+
+        padding: 25px;
+
+        border-radius: 18px;
+
+        background: rgba(59, 130, 246, .1);
+
+        border-left: 5px solid #3b82f6;
+
+    }
+
+    .note h2 {
+
+        margin-bottom: 10px;
+
+        font-size: 22px;
+
+    }
+
+    .note p {
+
+        color: #cbd5e1;
+
+        line-height: 1.8;
+
+    }
+</style>
+
 <body>
-    <h1>If Else Questions</h1>
+
+    <div class="container">
+
+        <h1>
+
+            <i class="ri-git-branch-line"></i>
+
+            If Else Questions Assignment
+
+        </h1>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <i class="ri-hashtag"></i>
+
+                <h3>Questions Included</h3>
+
+                <p>
+
+                    14 JavaScript If Else practice questions.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="ri-code-box-line"></i>
+
+                <h3>Concepts</h3>
+
+                <p>
+
+                    If
+
+                    Else
+
+                    Comparison Operators
+
+                    Logical Operators
+
+                    Conditions
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="ri-lightbulb-line"></i>
+
+                <h3>Practice</h3>
+
+                <p>
+
+                    Even Odd
+
+                    Positive Negative
+
+                    Login
+
+                    Triangle
+
+                    Shopping Cart
+
+                    Battery
+
+                    Speed Fine
+
+                    Electric Bill
+
+                    and more...
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="ri-terminal-box-line"></i>
+
+                <h3>Output</h3>
+
+                <p>
+
+                    Open Browser Developer Tools
+
+                    ↓
+
+                    Console
+
+                    to view every answer.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="note">
+
+            <h2>
+
+                💻 Console Instructions
+
+            </h2>
+
+            <p>
+
+                This assignment prints all outputs in the browser Console.
+
+                Press <b>F12</b> or <b>Ctrl + Shift + I</b>, then open the <b>Console</b> tab to see the results of
+                every question.
+
+            </p>
+
+        </div>
+
+    </div>
+
 </body>
 <script>
     // Q1 — Even or Odd
     // Given a number, check if it is even or odd.
     // Expected output: "7 is Odd"
     let number = 7
-    if(number % 2 === 0) {
+    if (number % 2 === 0) {
         console.log(number + "is Even")
     }
-    else{
+    else {
         console.log(number + "is Odd")
     }
 
@@ -24,13 +292,13 @@
     // Check if a number is positive, negative, or zero.
     // Expected output: "Negative number"
     let number2 = -5
-    if(number2 > 0) {
+    if (number2 > 0) {
         console.log("Positive Number")
     }
-    if(number2 < 0) {
+    if (number2 < 0) {
         console.log("Negative Number")
     }
-    else{
+    else {
         console.log("Zero")
     }
 
@@ -39,22 +307,22 @@
     // Expected output: "b is bigger"
     let a = 15
     let b = 20
-    if(a > b) {
+    if (a > b) {
         console.log("a is Biggest")
     }
-    else{
+    else {
         console.log("b is Biggest")
     }
-    
+
 
     // Q4 — Pass or Fail
     // Passing marks is 40.
     // Expected output: "Failed"
     let marks = 35
-    if(marks > 40) {
+    if (marks > 40) {
         console.log("Passed")
     }
-    else{
+    else {
         console.log("Failed")
     }
 
@@ -64,13 +332,13 @@
     // 18+  = Adult
     // Expected output: "Teenager"
     let age = 14
-    if(age > 0 & age < 12) {
+    if (age > 0 & age < 12) {
         console.log("Child")
     }
-    if(age > 13 & age < 17) {
+    if (age > 13 & age < 17) {
         console.log("Teenager")
     }
-    else{
+    else {
         console.log("Adult")
     }
 
@@ -79,13 +347,13 @@
     // Expected output: "Lahore is hotter"
     let karachi = 38
     let lahore = 42
-    if(karachi > lahore) {
+    if (karachi > lahore) {
         console.log("Karachi is Hotter City")
     }
-    else{
+    else {
         console.log("Lahor is Hotter City")
     }
-    
+
 
     // Q7 — Discount Check
     // Bill 1000+ = 10% discount
@@ -93,13 +361,13 @@
     // Otherwise  = no discount
     // Expected output: "5% discount applied"
     let bill = 750
-    if(bill > 1000) {
+    if (bill > 1000) {
         console.log("10% Discount applied")
     }
-    if(bill > 500) {
+    if (bill > 500) {
         console.log("5% Discount applied")
     }
-    else{
+    else {
         console.log("No Discount")
     }
 
@@ -109,13 +377,13 @@
     // Below 20  = "Critical! Plug in now!"
     // Expected output: "Critical! Plug in now!"
     let battery = 18
-    if(battery > 50) {
+    if (battery > 50) {
         console.log("Battery Good")
     }
-    if(battery > 20) {
+    if (battery > 20) {
         console.log("Battery Low, plug in soon")
     }
-    else{
+    else {
         console.log("Critical! Plug in now!")
     }
 
@@ -125,13 +393,13 @@
     // else = "Invalid day"
     // Expected output: "Weekend, enjoy!"
     let day = 6
-    if(day > 1 & day < 5) {
+    if (day > 1 & day < 5) {
         console.log("Weekday, go to school")
     }
-    if(day > 6 & day < 7) {
+    if (day > 6 & day < 7) {
         console.log("Weekend, enjoy!")
     }
-    else{
+    else {
         console.log("Invalid day")
     }
 
@@ -142,16 +410,16 @@
     // Above 120  = "Heavy fine: Rs 2000 + license cancelled"
     // Expected output: "Fine: Rs 500"
     let speed = 95
-    if(speed < 60) {
+    if (speed < 60) {
         console.log("Safe driving")
     }
-    if(speed < 80) {
+    if (speed < 80) {
         console.log("Slight overspeed, warning")
     }
-    if(speed < 120) {
+    if (speed < 120) {
         console.log("Fine: Rs 500")
     }
-    else{
+    else {
         console.log("Heavy fine: Rs 2000 + license cancelled")
     }
 
@@ -165,10 +433,10 @@
 
     if (units <= 100) {
         bill = units * 5
-    } 
+    }
     if (units <= 300) {
         bill = units * 10
-    } 
+    }
     else {
         bill = units * 20
     }
@@ -187,10 +455,10 @@
 
     if (username !== "student") {
         console.log("Username not found")
-    } 
+    }
     if (password !== "abc123") {
         console.log("Wrong password")
-    } 
+    }
     else {
         console.log("Login successful!")
     }
@@ -206,15 +474,14 @@
 
     if (side1 === side2 & side2 === side3) {
         console.log("Equilateral triangle")
-    } 
+    }
     if (
         side1 === side2 ||
         side1 === side3 ||
         side2 === side3
-    ) 
-    {
+    ) {
         console.log("Isosceles triangle")
-    } 
+    }
     else {
         console.log("Scalene triangle")
     }
@@ -231,15 +498,16 @@
 
     if (items > 10 & isMember) {
         console.log("20% discount")
-} 
+    }
     if (items > 10 & !isMember) {
         console.log("10% discount")
-}
+    }
     if (items < 10 & isMember) {
         console.log("5% discount")
-} 
+    }
     else {
         console.log("No discount")
-}
+    }
 </script>
+
 </html>
