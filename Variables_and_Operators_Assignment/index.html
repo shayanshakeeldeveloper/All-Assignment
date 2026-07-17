@@ -1,114 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Variables and Operators</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+
+        font-family: "Poppins", sans-serif;
+
+        background: linear-gradient(135deg, #050816, #0f172a, #111827);
+
+        min-height: 100vh;
+
+        padding: 60px 20px;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        color: white;
+
+    }
+
+    .container {
+
+        width: 100%;
+
+        max-width: 900px;
+
+        background: rgba(255, 255, 255, .06);
+
+        backdrop-filter: blur(18px);
+
+        border: 1px solid rgba(255, 255, 255, .08);
+
+        border-radius: 30px;
+
+        padding: 45px;
+
+        box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+
+    }
+
+    h1 {
+
+        text-align: center;
+
+        font-size: 40px;
+
+        margin-bottom: 40px;
+
+        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+
+        --webkit-background-clip: text;
+
+        -webkit-text-fill-color: white;
+
+    }
+
+    .question {
+
+        background: rgba(255, 255, 255, .05);
+
+        border: 1px solid rgba(255, 255, 255, .08);
+
+        padding: 25px;
+
+        border-radius: 20px;
+
+        margin-bottom: 20px;
+
+        transition: .35s;
+
+    }
+
+    .question:hover {
+
+        transform: translateY(-8px);
+
+        border-color: #3b82f6;
+
+        box-shadow: 0 15px 35px rgba(37, 99, 235, .25);
+
+    }
+
+    .question h3 {
+
+        font-size: 22px;
+
+        margin-bottom: 15px;
+
+        color: #60a5fa;
+
+    }
+
+    .question p {
+
+        line-height: 1.8;
+
+        color: #cbd5e1;
+
+    }
+
+    .note {
+
+        margin-top: 35px;
+
+        padding: 20px;
+
+        border-left: 5px solid #3b82f6;
+
+        background: rgba(59, 130, 246, .08);
+
+        border-radius: 15px;
+
+        color: #cbd5e1;
+
+    }
+</style>
+
 <body>
-    <h1>Variables and Operators Assignment</h1>
-<div>
-    <b>Q1. Which outputs are strings?</b><br>
-    Ans1. ChallengeExercise1
-</div>
-<br>
-<div>
-    <b>Q2. Which outputs are numbers?</b><br>
-    Ans2. ChallengeExercise2, ChallengeExercise3, ChallengeExercise4
-    
-</div>
-<br>
-<div>
-    <b>Q3. Why are the results different?</b><br>
-    Ans3. (+) operator jab string dekhta hai to values ko text ki tarah jor deta hai.
-(-, *, aur /) operators string ko automatically number mein convert kar dete hain aur phir calculation karte hain.
-</div>
+    <div class="container">
+
+        <h1>
+            <i class="ri-code-box-line"></i>
+            Variables & Operators Assignment
+        </h1>
+
+        <div class="question">
+
+            <h3>Q1. Which outputs are strings?</h3>
+
+            <p>
+                ChallengeExercise1
+            </p>
+
+        </div>
+
+        <div class="question">
+
+            <h3>Q2. Which outputs are numbers?</h3>
+
+            <p>
+                ChallengeExercise2,
+                ChallengeExercise3,
+                ChallengeExercise4
+            </p>
+
+        </div>
+
+        <div class="question">
+
+            <h3>Q3. Why are the results different?</h3>
+
+            <p>
+
+                The (+) operator joins values as text whenever one value is a string.
+
+                The (-), (*), and (/) operators automatically convert numeric strings into numbers before performing
+                calculations.
+
+            </p>
+
+        </div>
+
+        <div class="note">
+
+            <b>💻 Console Output:</b>
+
+            Open your browser's Developer Tools and go to the <b>Console</b> tab to view the output of all exercises.
+
+        </div>
+
+    </div>
 </body>
 <script>
     // Exercise 1:
     let num1 = 10
     let num2 = 20
 
-    console.log ("Exercise1=>" , num1 + num2)
+    console.log("Exercise1=>", num1 + num2)
 
     // Exercise2:
     let a = 50
     let b = 15
 
-    console.log ("Exercise2=>" , a - b)
+    console.log("Exercise2=>", a - b)
 
     // Exercise3:
     let x = 12
     let y = 5
 
-    console.log ("Exercise3=>" , x * y)
+    console.log("Exercise3=>", x * y)
 
     // Exercise4:
     let total = 100
     let parts = 4
 
-    console.log ("Exercise4=>" , total / parts)
+    console.log("Exercise4=>", total / parts)
 
     // Exercise5:
     let math = 80
-    let english =70
+    let english = 70
     let science = 90
 
-    console.log ("Exercise5=>" , math + english + science)
+    console.log("Exercise5=>", math + english + science)
 
     // Exercise6:
     let average = (math + english + science) / 3
 
-    console.log ("Exercise6=>" , average)
+    console.log("Exercise6=>", average)
 
     // Exercise7:
     let lenght = 10
     let width = 5
 
-    console.log ("Exercise7=>" , lenght * width)
+    console.log("Exercise7=>", lenght * width)
 
     // Exercise8:
     let currentAge = 20
 
-    console.log ("Exercise8=>" , currentAge +5)
+    console.log("Exercise8=>", currentAge + 5)
 
     // Exercise9:
     let weeklyPocketMoney = 500
 
-    console.log ("Exercise9=>" , weeklyPocketMoney * 4)
+    console.log("Exercise9=>", weeklyPocketMoney * 4)
 
     // Exercise10:
     let penPrice = 30
     let notebookPrice = 120
     let eraserPrice = 20
 
-    console.log ("Exercise10=>" , penPrice + notebookPrice + eraserPrice)
+    console.log("Exercise10=>", penPrice + notebookPrice + eraserPrice)
 
     // Exercise11:
     let basicSalary = 30000
     let bonus = 5000
 
-    console.log ("Exercise11=>" , basicSalary + bonus)
+    console.log("Exercise11=>", basicSalary + bonus)
 
     // Exercise12:
     let match1 = 45
     let match2 = 60
     let match3 = 80
 
-    console.log ("Exercise12=>" , match1 + match2 + match3)
+    console.log("Exercise12=>", match1 + match2 + match3)
 
     // Challenge Exercise:
     let m = 10
     let n = "5"
 
-    console.log("ChallengeExercise1=>" , m + n)
+    console.log("ChallengeExercise1=>", m + n)
 
-    console.log("ChallengeExercise2=>" , m - n)
+    console.log("ChallengeExercise2=>", m - n)
 
-    console.log("ChallengeExercise3=>" , m * n)
+    console.log("ChallengeExercise3=>", m * n)
 
-    console.log("ChallengeExercise4=>" , m / n)
+    console.log("ChallengeExercise4=>", m / n)
 
 
 </script>
+
 </html>
